@@ -8,7 +8,7 @@ const USER_AGENT = 'Cloudflare Worker'
 
 // format request for twitter api
 
-const TWITTER_BEARER = "AAAAAAAAAAAAAAAAAAAAACNTLAEAAAAA1GbSnn8R9si0ALdzAnY7YXTpLfM%3DqYuwbmWNb9pPuMCnv1ti41mbLh7CbaSNJLxAahayBcxvWIr33t";
+const TWITTER_BEARER = "";
 var requestHeaders = new Headers()
 requestHeaders.append('Authorization', 'Bearer ' + TWITTER_BEARER)
 var requestOptions = {
