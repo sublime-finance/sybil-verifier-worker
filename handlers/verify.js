@@ -5,7 +5,7 @@ import { Octokit } from '@octokit/rest'
 
 // github api info
 const USER_AGENT = 'Cloudflare Worker'
-
+const TWITTER_BEARER = 'a'
 // format request for twitter api
 
 const TWITTER_BEARER = "AAAAAAAAAAAAAAAAAAAAACNTLAEAAAAA1GbSnn8R9si0ALdzAnY7YXTpLfM%3DqYuwbmWNb9pPuMCnv1ti41mbLh7CbaSNJLxAahayBcxvWIr33t";
@@ -36,6 +36,7 @@ const reg = new RegExp('(?<=sig:).*')
 export async function handleVerify(request) {
     try {
         // get tweet id and account from url
+        console.log('hey')
         const { searchParams } = new URL(request.url)
         let tweetID = searchParams.get('id')
         let account = searchParams.get('account')
