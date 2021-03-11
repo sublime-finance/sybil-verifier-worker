@@ -5,7 +5,7 @@ import { Octokit } from '@octokit/rest'
 
 // github api info
 const USER_AGENT = 'Cloudflare Worker'
-const TWITTER_BEARER = 'a'
+
 // format request for twitter api
 
 const TWITTER_BEARER = "AAAAAAAAAAAAAAAAAAAAACNTLAEAAAAA1GbSnn8R9si0ALdzAnY7YXTpLfM%3DqYuwbmWNb9pPuMCnv1ti41mbLh7CbaSNJLxAahayBcxvWIr33t";
@@ -40,7 +40,7 @@ export async function handleVerify(request) {
         const { searchParams } = new URL(request.url)
         let tweetID = searchParams.get('id')
         let account = searchParams.get('account')
-
+        console.log(tweetID,account);
         // get tweet data from twitter api
         const twitterURL = `https://api.twitter.com/2/tweets?ids=${tweetID}&expansions=author_id&user.fields=username`
         requestOptions.headers.set('Origin', new URL(twitterURL).origin) // format for cors
@@ -59,6 +59,7 @@ export async function handleVerify(request) {
 
         // get tweet text and handle
         const tweetContent = twitterResponse.data[0].text
+        console.log(tweetContent);
         const handle = twitterResponse.includes.users[0].username
 
         // parse sig from tweet
