@@ -3,4 +3,4 @@ worker/
 .cargo-ok
 package-lock.json
 wrangler.toml
-dist
+dist/

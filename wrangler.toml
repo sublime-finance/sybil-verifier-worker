@@ -1,4 +1,4 @@
-name = "hey"
+name = "sublime-verified-worker"
 type = "webpack"
 account_id = ""
 workers_dev = true
